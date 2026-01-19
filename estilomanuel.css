@@ -1,0 +1,242 @@
+body {
+  font-family: system-ui;
+  background-color: #f8f9fa;
+  color: #202122;
+  margin: 0;
+  
+}
+.wiki-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ebecf0;
+  border-bottom: 2px solid #e2e3e5;
+  padding: 10px 12px;
+  font-family: serif;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;             
+}
+
+.menu-icon {
+  font-size: 1.4em;
+  width: 30px;
+  text-align: center;
+  color: #515557;
+}
+
+.logo {
+  font-size: 1.4em;
+  color: #515557;
+  font-family: serif;
+  letter-spacing: 1px;
+  font-variant: small-caps;
+}
+
+.header-center {
+  font-family: serif;
+  font-size: 1.2em;
+  letter-spacing: 1px;
+  font-variant: small-caps;
+  text-align: left;
+}
+
+
+.container {
+  width: 70%;
+  margin: auto;
+  background-color: white;
+  padding: 20px;
+}
+.search-icon {
+  width: 9px;
+  height: 9px;
+  border: 2px solid #515557;
+  border-radius: 50%;
+  position: relative;
+  margin-right: 16px;
+}
+
+.search-icon::after {
+  content: "";
+  width: 7px;
+  height: 2px;
+  background: #515557;
+  position: absolute;
+  right: -6px;
+  bottom: -4px;
+  transform: rotate(45deg);
+}
+
+.linea {
+  border-bottom: 1px solid #adb3ba;
+  opacity: 0.7;
+}
+
+.linea2 {
+  border-bottom: 1px solid #adb3ba;
+  opacity: 0.7;
+  padding: 10px 5px;
+}
+
+.iconos {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 10px;
+}
+
+
+.iconos .izq {
+  margin-right: auto;
+  gap: 0px;
+}
+
+.iconos img {
+  width: 16px;
+  height: 16px;
+}
+.contenido {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+h1 {
+  font-weight: normal;
+  font-family: serif;
+  margin-bottom: 0px;
+}
+
+h2 {
+  border-bottom: 1px solid #a2a9b1;
+  margin-top: 30px;
+}
+
+.subtitle {
+  font-size: 0.8em;
+  color: #54595d;
+  margin-top: 0px;
+}
+
+.intro {
+  margin-top: 20px;
+}
+
+.tabla-ficha {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+  background: #f9f9f9;
+  table-layout: fixed; 
+  
+}
+
+.tabla-ficha th {
+  font-size: 14px;
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.tabla-ficha td {
+  padding: 10px;
+  text-align: left;
+  
+  position: relative;
+
+
+
+}
+
+.tabla-ficha tr:not(:last-child) td::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  height: 1px;
+  background-color: #ddd;
+}
+
+/* primera celda: línea recortada a la izquierda */
+.tabla-ficha tr:not(:last-child) td:first-child::after {
+  left: 5px; /* hueco al borde izquierdo */
+  right: 0;  /* se extiende hasta el final de la celda de la derecha */
+}
+
+/* celdas del medio: línea completa (se superpone) */
+.tabla-ficha tr:not(:last-child) td:not(:first-child):not(:last-child)::after {
+  left: 0;
+  right: 0;
+}
+
+/* última celda: línea recortada a la derecha */
+.tabla-ficha tr:not(:last-child) td:last-child::after {
+  left: 0;
+  right: 5px; /* hueco al borde derecho */
+}
+
+/* última fila: línea completa para cerrar la tabla */
+.tabla-ficha tr:last-child td {
+  border-bottom: 1px solid #ddd;
+}
+.tabla-ficha img {
+  max-width: 100%;
+  height: auto;
+  align-self: center;
+}
+
+
+.wiki-section {
+  margin-top: 30px;
+}
+
+
+.wiki-section summary {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  font-size: 1.5em;           
+  font-weight: normal;
+  font-family: serif;
+  color: #202122;
+
+  list-style: none;
+  border-bottom: 1px solid #a2a9b1;
+  padding-bottom: 4px;
+}
+
+
+.wiki-section summary::-webkit-details-marker {
+  display: none;
+}
+
+
+.toggle-icon {
+  font-size: 1.2em;        
+  color: #54595d;
+  display: inline-block;
+  transform: rotate(90deg) scale(0.85) scaleX(0.6);  
+  transform-origin: center;
+  transition: transform 0.15s ease;
+}
+
+
+.wiki-section[open] .toggle-icon {
+  transform: rotate(-90deg) scale(0.85) scaleX(0.6);
+}
+
+
+.section-content {
+  margin-top: 12px;
+}
+
+.end {
+  background-color: #ebecf0;
+  height: 60px;
+  width: 100%;
+}
